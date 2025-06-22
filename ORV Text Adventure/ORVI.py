@@ -1,8 +1,6 @@
 import time
 import random 
-
-wait = time.sleep(1)
-
+import Constellations as cons
 characterHealth = 100
 violentPersonAlive = True
 introSceneTrigger = False
@@ -14,60 +12,14 @@ class Enemy:
         self.name = name
         self.health = health
         self.attacks = attacks
-
-class Constellation:
-    def __init__(self, name, tier, stigma):
-        self.name = name
-        self.tier = tier
-        self.stigma = stigma
-
-# Chooses random attack
-def randomAttack(self):
+    
+    def randomEnemyAttack(self):
         return random.choice(self.attacks)
-
-# Constellations and their stigmas
-def steelLikeDefense():
-    pass 
-masterOfSteel = Constellation("Master of Steel", "Narrative Grade", steelLikeDefense)
-
-def songOfTheWater():
-    pass
-navalGeneral = Constellation("Naval General", "Historical Grade", songOfTheWater)
-
-def abyssOfDarkness():
-    pass
-darkVoidedBird = Constellation("Dark Voided Bird", "Narrative Grade", abyssOfDarkness)
-
-def timeOfVerdict():
-    pass
-juryOfWater = Constellation("Jury of Water", "Narrative Grade", timeOfVerdict)
-
-def scheming():
-    pass
-deviousSchemer = Constellation("Devious Schemer", "■■■■■■■", scheming)
-
-def shineBrightLikeADiamond():
-    pass
-queenOfTheElevenStars = Constellation("Ablazing Sun", "Narrative Grade", shineBrightLikeADiamond)
-
-def lesserBeing():
-    pass
-duskEffigy = Constellation("Dusk Effigy", "■■■■■■■", lesserBeing)
-
-def pinpoint():
-    pass
-goldenStickAndString = Constellation("Golden Stick and String", "Narrative Grade", pinpoint)
-
-
-# Chooses Constellation
-def randomConstellation():
-    pass
 
 # Navigation around the map
 def introScene():
     choices = ["left, right, forward, backward,"]
-    randomConstellation() == ["" + " none"]
-    constellationChoices = randomConstellation()
+    constellationChoices = cons.randomConstellation()
     global introSceneTrigger
     if introSceneTrigger == False:
         print("You are on a subway in the secondary car. A blue futuristic screen appears infront of you.")
