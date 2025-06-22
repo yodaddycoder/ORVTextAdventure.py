@@ -59,4 +59,4 @@ kingOfTheAtmosphericallyChargedChair = Constellation("King of The Atmosphericall
 
 # Chooses Constellation
 def randomConstellation():
-    pass
+    return ""
