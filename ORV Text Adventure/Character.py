@@ -29,13 +29,14 @@ class StatsGroup:
     def addStat(self, stat):
         self.stats.append(stat)
 
-class Player:
+class Character:
     def __init__(self, name):
         self.name = name
         self.sponsor = "None"
         self.attributes = StatsGroup("Attributes", [])
         self.skills = StatsGroup("Skills", [])
         self.overallStats = StatsGroup("Overall Stats", [Stat("Stamina"), Stat("Strength"), Stat("Agility"), Stat("Mana")])
+        self.health = 100
 
     def displayLine(self):
         print("__________________________________________________________________________________")
@@ -51,5 +52,5 @@ class Player:
         print("Overall Stats: " + str(self.overallStats))
         self.displayLine()
 
-player = Player("Boo")
+player = Character("Boo")
 player.displayAttributesWindow()
