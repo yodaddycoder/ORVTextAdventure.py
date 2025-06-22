@@ -16,8 +16,9 @@ class Enemy:
         self.attacks = attacks
 
 class Constellation:
-    def __init__(self, name, stigma):
+    def __init__(self, name, tier, stigma):
         self.name = name
+        self.tier = tier
         self.stigma = stigma
 
 # Chooses random attack
@@ -27,35 +28,35 @@ def randomAttack(self):
 # Constellations and their stigmas
 def steelLikeDefense():
     pass 
-masterOfSteel = Constellation("Master of Steel", steelLikeDefense)
+masterOfSteel = Constellation("Master of Steel", "Narrative Grade", steelLikeDefense)
 
 def songOfTheWater():
     pass
-navalGeneral = Constellation("Naval General", songOfTheWater)
+navalGeneral = Constellation("Naval General", "Historical Grade", songOfTheWater)
 
 def abyssOfDarkness():
     pass
-darkVoidedBird = Constellation("Dark Voided Bird", abyssOfDarkness)
+darkVoidedBird = Constellation("Dark Voided Bird", "Narrative Grade", abyssOfDarkness)
 
 def timeOfVerdict():
     pass
-juryOfWater = Constellation("Jury of Water", timeOfVerdict)
+juryOfWater = Constellation("Jury of Water", "Narrative Grade", timeOfVerdict)
 
 def scheming():
     pass
-deviousSchemer = Constellation("Devious Schemer", scheming)
+deviousSchemer = Constellation("Devious Schemer", "■■■■■■■", scheming)
 
 def shineBrightLikeADiamond():
     pass
-ablazingSun = Constellation("Ablazing Sun", shineBrightLikeADiamond)
+queenOfTheElevenStars = Constellation("Ablazing Sun", "Narrative Grade", shineBrightLikeADiamond)
 
 def lesserBeing():
     pass
-duskEffigy = Constellation("Dusk Effigy", lesserBeing)
+duskEffigy = Constellation("Dusk Effigy", "■■■■■■■", lesserBeing)
 
 def pinpoint():
     pass
-goldenStickAndString = Constellation("Golden Stick and String", pinpoint)
+goldenStickAndString = Constellation("Golden Stick and String", "Narrative Grade", pinpoint)
 
 
 # Chooses Constellation
