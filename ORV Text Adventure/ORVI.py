@@ -19,7 +19,7 @@ class Enemy:
 # Navigation around the map
 def introScene():
     choices = ["left, right, forward, backward,"]
-    constellationChoices = cons.randomConstellation()
+    cons.randomConstellation()
     global introSceneTrigger
     if introSceneTrigger == False:
         print("You are on a subway in the secondary car. A blue futuristic screen appears infront of you.")
@@ -29,8 +29,8 @@ def introScene():
     else:
         print("You are back where you started.")
     userInput = ""
-    while userInput not in constellationChoices:
-        print(constellationChoices)
+    while userInput not in cons.constellationChoices:
+        print(cons.constellationChoices)
         if userInput == "none":
             print("You have no constellation.")
         elif userInput == "":
