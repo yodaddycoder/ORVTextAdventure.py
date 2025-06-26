@@ -37,6 +37,7 @@ class Character:
         self.skills = StatsGroup("Skills", [])
         self.overallStats = StatsGroup("Overall Stats", [Stat("Stamina"), Stat("Strength"), Stat("Agility"), Stat("Mana")])
         self.health = 100
+        self.coins = 0
 
     def displayLine(self):
         print("__________________________________________________________________________________")
@@ -52,5 +53,28 @@ class Character:
         print("Overall Stats: " + str(self.overallStats))
         self.displayLine()
 
-player = Character("Boo")
-player.displayAttributesWindow()
+    def displayHealth(self):
+        print("[ You have a total of " + str(self.health) + " health points. ]")
+
+    def addHealth(self, hp):
+        self.health += hp
+    
+    def subtractHealth(self, hp):
+        self.health -= hp
+
+    def isAlive(self):
+        if (self.health <= 0):
+            return False
+        return True
+
+    def displayCoins(self):
+        print("[ You have a total of " + str(self.coins) + " coins. ]")
+
+    def addCoins(self, coins):
+        self.coins += coins
+    
+    def subtractCoins(self, coins):
+        self.coins -= coins
+
+# player = Character("Boo")
+# player.displayAttributesWindow()
