@@ -54,10 +54,14 @@ class Character:
         self.coins = coins
 
     def useEquipped(self):
-        if (self.inventory.equipped == None):
+        equipped = self.inventory.equipped
+        if (equipped == None):
             self.inventory.showEquipped()
             return
-        self.inventory.equipped.activateAbility()
+        equipped.activateAbility()
+        if equipped.consumable == True:
+            print(f"Used up {equipped.name}")
+            self.inventory.deleteEquipped()
 
 class MainCharacter(Character):
     def __init__(self, name):

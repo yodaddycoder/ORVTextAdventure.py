@@ -40,13 +40,19 @@ class Inventory:
         for item, quantity in self.inventory.items():
             print(f"{item.name} x{quantity}")
         text.displayLine()
+
+    def unequipItem(self):
+        self.addToInventory(self.equipped, 1)
     
     def equipItem(self, item):
         self.removeFromInventory(item, 1)
         if (self.equipped != None):
-            self.addToInventory(self.equipped, 1)
+            self.unequipItem()
         self.equipped = item
         print(f"Equipped {item.name}")
+    
+    def deleteEquipped(self):
+        self.equipped = None
 
     def showEquipped(self):
         if (self.equipped == None):
