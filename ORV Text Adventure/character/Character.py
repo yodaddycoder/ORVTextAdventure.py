@@ -1,5 +1,4 @@
-import Stats as stats
-import Inventory as inv
+from character import Stats as stats, Inventory as inv
 import Text as text
 
 class Character:

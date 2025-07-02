@@ -1,5 +1,4 @@
-import Character as c
-import Item as item
+from character import Character as c, Item as item
 
 # Character creation test
 player = c.MainCharacter("Boo")

@@ -1,4 +1,5 @@
-import Item as item, Text as text
+from character import Item as item
+import Text as text
 
 class Inventory:
     def __init__(self):
