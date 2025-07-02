@@ -39,4 +39,4 @@ player.inventory.displayInventory()
 # something.displayDetails()
 # somethingElse.displayDetails()
 ### Inventory access tests
-player.inventory.accessInventory()
+# player.inventory.accessInventory()

@@ -16,16 +16,16 @@ class Character:
     def displayAttributesWindow(self):
         text.displayLine()
         print("[Personal Information]")
-        print("Name: " + self.name)
-        print("Age: " + self.age)
-        print("Sponsor: " + self.sponsor)
-        print("Exclusive Attributes: " + str(self.attributes))
-        print("Exclusive Skills: " + str(self.skills))
-        print("Overall Stats: " + str(self.overallStats))
+        print(f"Name: {self.name}")
+        print(f"Age: {self.age}")
+        print(f"Sponsor: {self.sponsor}")
+        print(f"Exclusive Attributes: {str(self.attributes)}")
+        print(f"Exclusive Skills: {str(self.skills)}")
+        print(f"Overall Stats: {str(self.overallStats)}")
         text.displayLine()
 
     def displayHealth(self):
-        print("[You have a total of " + str(self.health) + " health points.]")
+        print(f"[You have a total of {str(self.health)} health points.]")
 
     def addHealth(self, hp):
         self.health += hp
@@ -42,7 +42,7 @@ class Character:
         return True
 
     def displayCoins(self):
-        print("[You have a total of " + str(self.coins) + " coins.]")
+        print(f"[You have a total of {str(self.coins)} coins.]")
 
     def addCoins(self, coins):
         self.coins += coins

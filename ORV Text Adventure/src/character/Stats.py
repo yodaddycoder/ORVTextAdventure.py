@@ -5,7 +5,7 @@ class Stat:
         self.level = 0
         
     def __str__(self):
-        return self.name + " Lv. " + str(self.level)
+        return f"{self.name} Lv. {str(self.level)}"
     
 class StatsGroup:
     def __init__(self, name, stats):
