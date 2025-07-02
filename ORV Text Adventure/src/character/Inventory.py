@@ -4,6 +4,7 @@ import Text as text
 class Inventory:
     def __init__(self):
         self.inventory = {}
+        self.equipped = None
 
     def deleteFromInventory(self, item):
         self.inventory.pop(item)
@@ -27,20 +28,6 @@ class Inventory:
             else:
                 print("ERROR: Attempted to remove item that doesn't exist in inventory")
                 return
-            
-    def accessInventory(self):
-        itemName = input("Equip item (q to close): ")
-        if itemName == "q":
-            print("[Closed inventory]")
-            return
-        for item in self.inventory:
-            if item.getName() == itemName:
-                # TODO: equip item
-                print(f"Equipped {itemName}")
-                return
-        print("Item not in inventory")
-        self.accessInventory()
-        return
 
     def displayInventory(self):
         text.displayLine()
@@ -51,5 +38,31 @@ class Inventory:
             return
         
         for item, quantity in self.inventory.items():
-            print(f"{item.getName()} x{quantity}")
+            print(f"{item.name} x{quantity}")
         text.displayLine()
+    
+    def equipItem(self, item):
+        self.removeFromInventory(item, 1)
+        if (self.equipped != None):
+            self.addToInventory(self.equipped, 1)
+        self.equipped = item
+        print(f"Equipped {item.name}")
+
+    def showEquipped(self):
+        if (self.equipped == None):
+            print("You are not using anything")
+            return
+        print(f"You have a(n) {self.equipped.name}")
+
+    def accessInventory(self):
+        itemName = input("Equip item (q to close): ")
+        if itemName == "q":
+            print("[Closed inventory]")
+            return
+        for item in self.inventory:
+            if item.name == itemName:
+                self.equipItem(item)
+                return
+        print("Item not in inventory")
+        self.accessInventory()
+        return

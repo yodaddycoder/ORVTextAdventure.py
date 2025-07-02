@@ -53,6 +53,12 @@ class Character:
     def setCoins(self, coins):
         self.coins = coins
 
+    def useEquipped(self):
+        if (self.inventory.equipped == None):
+            self.inventory.showEquipped()
+            return
+        self.inventory.equipped.activateAbility()
+
 class MainCharacter(Character):
     def __init__(self, name):
         super().__init__(name, "■")

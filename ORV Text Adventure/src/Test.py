@@ -18,7 +18,15 @@ player.inventory.removeFromInventory(something, 2)
 player.inventory.displayInventory()
 player.inventory.removeFromInventory(somethingElse, -1)
 player.inventory.removeFromInventory(aThing, 1)
+player.inventory.addToInventory(something, 1)
 player.inventory.displayInventory()
-player.inventory.accessInventory()
 # Equipped item tests
-# somethingElse.activateAbility()
+player.useEquipped()
+player.inventory.accessInventory() # Equip somethingElse
+player.inventory.showEquipped()
+player.useEquipped()
+player.inventory.displayInventory()
+player.inventory.accessInventory() # Equip something
+player.inventory.showEquipped()
+player.useEquipped()
+player.inventory.displayInventory()
