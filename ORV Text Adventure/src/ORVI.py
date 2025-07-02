@@ -23,21 +23,28 @@ def introScene():
     global introSceneTrigger
     if introSceneTrigger == False:
         print("You are on a subway in the secondary car. A blue futuristic screen appears infront of you.")
+        time.sleep(1)
         print("[Scenario 1:]")
         print("[Kill at least one living organism within 5 minutes.]")
         print("Failure to do so will result in extermination.")
+        time.sleep(1)
     else:
         print("You are back where you started.")
     userInput = ""
-    while userInput not in cons.constellationChoices:
-        print(cons.constellationChoices)
+    while userInput not in constellationChoices:
+        print(constellationChoices)
+        userInput = input("") # ALEXIS: ADDED THIS TO ACTUALLY GET USER INPUT
         if userInput == "none":
             print("You have no constellation.")
+            break # ALEXIS: ADDED THIS TO BREAK OUT OF THE WHILE LOOP BC USER INPUT WOULD STILL BE NONE
         elif userInput == "":
             # choosable constellations
             pass
+
+    # ALEXIS: YOU SHOULD USE A DO WHILE LOOP FOR THIS, LOOK IT UP
     while userInput not in choices:
         print("Options, left, right, forward, backward")
+        userInput = input("") # ALEXIS: ADDED THIS TO ACTUALLY GET USER INPUT
         if userInput == "left":
             time.sleep(1)
             violentPerson1()
@@ -62,6 +69,7 @@ def violentPerson1():
         userInput1 = ""
         while userInput1 not in violentPersonDeadChoices:
             print("Options: left, right, loot")
+            userInput1 = input("")
             if userInput1 == "left":
                 time.sleep(1)
                 randomPerson()
@@ -78,6 +86,7 @@ def violentPerson1():
         userInput = ""
         while userInput not in choices:
             print("Options: left, right, talk, fight")
+            userInput = input("")
             if userInput == "left":
                 time.sleep(1)
                 print("The man infront of you grabs you. He raises his fists.")

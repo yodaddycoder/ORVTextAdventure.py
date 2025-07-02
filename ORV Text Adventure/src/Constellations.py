@@ -69,7 +69,4 @@ amountOfConstellations = rand.choices(amountOfConstellationsList, chancesForAmou
 
 # Chooses Constellation
 def randomConstellation():
-    rand.choices(ConstellationList, chancesForConstellation = chancesForConstellation, k = amountOfConstellations)
-    #Constellation names printed to be chosen using self
-    constellationChoices = []
-    print("You can choose " + constellationChoices)
+    return ""
