@@ -77,6 +77,20 @@ class Character:
             else:
                 print("ERROR: Attempted to remove item that doesn't exist in inventory")
                 return
+            
+    def accessInventory(self):
+        itemName = input("Equip item (q to close): ")
+        if itemName == "q":
+            print("[Closed inventory]")
+            return
+        for item in self.inventory:
+            if item.getName() == itemName:
+                # TODO: equip item
+                print(f"Equipped {itemName}")
+                return
+        print("Item not in inventory")
+        self.accessInventory()
+        return
 
     def displayInventory(self):
         self.displayLine()
