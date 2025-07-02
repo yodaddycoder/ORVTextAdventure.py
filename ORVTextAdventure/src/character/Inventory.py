@@ -1,5 +1,5 @@
 from character import Item as item
-import Text as text
+from helper import Text as text
 
 class Inventory:
     def __init__(self):
