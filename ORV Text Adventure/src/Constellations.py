@@ -1,3 +1,5 @@
+import random as rand
+
 class Constellation:
     def __init__(self, name, tier, stigma):
         self.name = name
@@ -31,7 +33,7 @@ queenOfTheElevenStars = Constellation("Ablazing Sun", "Narrative Grade", shineBr
 
 def lesserBeing():
     pass
-duskEffigy = Constellation("Dusk Effigy", "■■■■■■■", lesserBeing)
+duskEffigy = Constellation("Dusk Effigy", "Myth Grade", lesserBeing)
 
 def pinpoint():
     pass
@@ -56,6 +58,14 @@ theGrandPriest = Constellation("The Grand Priest", "Historical Grade", crucifix)
 def impendingThunder():
     pass
 kingOfTheAtmosphericallyChargedChair = Constellation("King of The Atmospherically Charged Chair", "Myth Grade", impendingThunder)
+
+ConstellationList = [masterOfSteel, navalGeneral, darkVoidedBird, juryOfWater, deviousSchemer, queenOfTheElevenStars, duskEffigy, goldenStickAndString, offenseMaster, redBloodManipulator, godOfTheOpera, theGrandPriest, kingOfTheAtmosphericallyChargedChair]
+chancesForConstellation = [0.08, 0.1, 0.08, 0.08, 0.001, 0.08, 0.05, 0.08, 0.1, 0.1, 0.1, 0.1]
+
+amountOfConstellationsList = [0, 1, 2, 3, 4, 5]
+chancesForAmountOfConstellations = [0.25, 0.45, 0.225, 0.05, 0.025]
+amountOfConstellations = rand.choices(amountOfConstellationsList, chancesForAmountOfConstellations = chancesForAmountOfConstellations, k = 1)
+
 
 # Chooses Constellation
 def randomConstellation():
