@@ -1,41 +1,12 @@
-class Stat:
-    def __init__(self, name):
-        self.name = name
-        self.exp = 0
-        self.level = 0
-        
-    def __str__(self):
-        return self.name + " Lv. " + str(self.level)
-    
-class StatsGroup:
-    def __init__(self, name, stats):
-        self.name = name
-        self.stats = stats
-        
-    def __str__(self):
-        if len(self.stats) == 0:
-            return "None"
-
-        display = ""
-        for i in range(len(self.stats)):
-            display += str(self.stats[i])
-            if i == len(self.stats) - 1:
-                display += "."
-                break
-            display += ", "
-            
-        return display
-
-    def addStat(self, stat):
-        self.stats.append(stat)
+import Stats as stats
 
 class Character:
     def __init__(self, name):
         self.name = name
         self.sponsor = "None"
-        self.attributes = StatsGroup("Attributes", [])
-        self.skills = StatsGroup("Skills", [])
-        self.overallStats = StatsGroup("Overall Stats", [Stat("Stamina"), Stat("Strength"), Stat("Agility"), Stat("Mana")])
+        self.attributes = stats.StatsGroup("Attributes", [])
+        self.skills = stats.StatsGroup("Skills", [])
+        self.overallStats = stats.StatsGroup("Overall Stats", [stats.Stat("Stamina"), stats.Stat("Strength"), stats.Stat("Agility"), stats.Stat("Mana")])
         self.health = 100
         self.coins = 0
 
