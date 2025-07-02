@@ -61,14 +61,28 @@ class Inventory:
         print(f"You have a(n) {self.equipped.name}")
 
     def accessInventory(self):
-        itemName = input("Equip item (q to close): ")
+        self.displayInventory()
+        itemName = input("Select item (q to close): ")
         if itemName == "q":
             print("[Closed inventory]")
             return
         for item in self.inventory:
             if item.name == itemName:
-                self.equipItem(item)
+                self.inventoryAction(item)
+                self.accessInventory()
                 return
         print("Item not in inventory")
         self.accessInventory()
         return
+    
+    def inventoryAction(self, item):
+        action = input("1 to equip, 2 to view details (q to quit): ")
+        if action == "q":
+            return
+        if action == "1":
+            self.equipItem(item)
+            return
+        if action == "2":
+            item.displayDetails()
+            return
+        print("That's not a valid action")

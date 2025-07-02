@@ -31,11 +31,12 @@ player.inventory.displayInventory()
 # player.inventory.accessInventory() # Equip somethingElse
 # player.inventory.showEquipped()
 # player.useEquipped()
-# player.inventory.displayInventory()
 # player.inventory.accessInventory() # Equip something
 # player.inventory.showEquipped()
 # player.useEquipped()
 # player.inventory.displayInventory()
 ### Item info tests
-something.displayDetails()
-somethingElse.displayDetails()
+# something.displayDetails()
+# somethingElse.displayDetails()
+### Inventory access tests
+player.inventory.accessInventory()
