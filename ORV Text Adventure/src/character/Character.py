@@ -24,9 +24,6 @@ class Character:
         print(f"Overall Stats: {str(self.overallStats)}")
         text.displayLine()
 
-    def displayHealth(self):
-        print(f"[You have a total of {str(self.health)} health points.]")
-
     def addHealth(self, hp):
         self.health += hp
     
@@ -40,9 +37,6 @@ class Character:
         if (self.health <= 0):
             return False
         return True
-
-    def displayCoins(self):
-        print(f"[You have a total of {str(self.coins)} coins.]")
 
     def addCoins(self, coins):
         self.coins += coins
@@ -66,3 +60,9 @@ class Character:
 class MainCharacter(Character):
     def __init__(self, name):
         super().__init__(name, "■")
+    
+    def displayHealth(self):
+        print(f"[You have a total of {str(self.health)} health points.]")
+        
+    def displayCoins(self):
+        print(f"[You have a total of {str(self.coins)} coins.]")
