@@ -64,7 +64,7 @@ chancesForConstellation = [0.08, 0.1, 0.08, 0.08, 0.001, 0.08, 0.05, 0.08, 0.1, 
 
 amountOfConstellationsList = [0, 1, 2, 3, 4, 5]
 chancesForAmountOfConstellations = [0.25, 0.45, 0.225, 0.05, 0.025]
-amountOfConstellations = rand.choices(amountOfConstellationsList, chancesForAmountOfConstellations = chancesForAmountOfConstellations, k = 1)
+# amountOfConstellations = rand.choices(amountOfConstellationsList, chancesForAmountOfConstellations = chancesForAmountOfConstellations, k = 1)
 
 
 # Chooses Constellation

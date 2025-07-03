@@ -1,5 +1,5 @@
 from enum import Enum
-import Text as text
+from helper import Text as text
 
 class Grade(Enum):
     Constellation = "Constellation Artifact"
