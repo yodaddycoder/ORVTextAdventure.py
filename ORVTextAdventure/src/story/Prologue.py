@@ -16,3 +16,14 @@ def prologue():
     text.typingPrint("ORV Text Adventure")
     time.sleep(5)
     text.clearScreen()
+
+def startGame():
+    while True:
+        start = input("Would you like to start reading? (y/n)\n")
+        if start == "y" or start == "n":
+            break
+
+    if start == "y":
+        return True
+    else:
+        return False
