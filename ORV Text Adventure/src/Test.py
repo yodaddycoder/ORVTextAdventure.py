@@ -1,4 +1,5 @@
 from character import Character as c, Item as item
+import Constellations as cons
 
 ### Character creation test
 player = c.MainCharacter("Boo")
@@ -57,3 +58,8 @@ player.displayAttributesWindow()
 # somethingElse.displayDetails()
 ### Inventory access tests
 # player.inventory.accessInventory()
+
+for i in range (10):
+    print("Constellation choices")
+    cons.randomConstellation()
+    print()

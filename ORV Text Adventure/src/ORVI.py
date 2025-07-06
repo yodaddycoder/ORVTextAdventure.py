@@ -6,6 +6,7 @@ violentPersonAlive = True
 introSceneTrigger = False
 constellationChosen = False
 
+
 # All Classes
 class Enemy:
     def __init__(self, name, health, attacks):
@@ -19,20 +20,25 @@ class Enemy:
 # Navigation around the map
 def introScene():
     choices = ["left, right, forward, backward,"]
-    cons.randomConstellation()
     global introSceneTrigger
     if introSceneTrigger == False:
         print("You are on a subway in the secondary car. A blue futuristic screen appears infront of you.")
         time.sleep(1)
+        print("")
         print("[Scenario 1:]")
         print("[Kill at least one living organism within 5 minutes.]")
         print("Failure to do so will result in extermination.")
         time.sleep(1)
+        print("")
+        print("Please choose your constellation.")
+        time.sleep(1)
+        print("")
+        print("Options:")
     else:
         print("You are back where you started.")
     userInput = ""
-    while userInput not in constellationChoices:
-        print(constellationChoices)
+    cons.randomConstellation()
+    while userInput not in cons.constellationChoices:
         userInput = input("") # ALEXIS: ADDED THIS TO ACTUALLY GET USER INPUT
         if userInput == "none":
             print("You have no constellation.")

@@ -60,13 +60,50 @@ def impendingThunder():
 kingOfTheAtmosphericallyChargedChair = Constellation("King of The Atmospherically Charged Chair", "Myth Grade", impendingThunder)
 
 ConstellationList = [masterOfSteel, navalGeneral, darkVoidedBird, juryOfWater, deviousSchemer, queenOfTheElevenStars, duskEffigy, goldenStickAndString, offenseMaster, redBloodManipulator, godOfTheOpera, theGrandPriest, kingOfTheAtmosphericallyChargedChair]
-chancesForConstellation = [0.08, 0.1, 0.08, 0.08, 0.001, 0.08, 0.05, 0.08, 0.1, 0.1, 0.1, 0.1]
+chancesForConstellation = [0.08, 0.1, 0.08, 0.08, 0.001, 0.08, 0.049, 0.08, 0.1, 0.1, 0.1, 0.1, 0.05]
 
 amountOfConstellationsList = [0, 1, 2, 3, 4, 5]
-chancesForAmountOfConstellations = [0.25, 0.45, 0.225, 0.05, 0.025]
-amountOfConstellations = rand.choices(amountOfConstellationsList, chancesForAmountOfConstellations = chancesForAmountOfConstellations, k = 1)
+chancesForAmountOfConstellations = [0.25, 0.45, 0.15, 0.075, 0.05, 0.025]
+
 
 
 # Chooses Constellation
 def randomConstellation():
+    global amountOfConstellations
+    global chancesForAmountOfConstellations
+    global amountOfConstellations
+    global ConstellationList
+    global chancesForConstellation
+    global constellationChoices
+    constellationChoices = []
+    amountOfConstellations = rand.choices(amountOfConstellationsList, weights = chancesForAmountOfConstellations, k = 1)
+    if amountOfConstellations[0] == 0:
+        print("No constellations are interested in you.")
+    else:
+        i = 0
+        while (i < amountOfConstellations[0]):
+            choice = rand.choices(ConstellationList, weights = chancesForConstellation, k = 1)[0]
+        
+            if choice in constellationChoices:
+                i -= 1
+                
+            else:
+                i += 1
+                constellationChoices.append(choice)
+                print(choice.name)
+ #       make sure its not adding something thats already in the list
+ #      if the same object is chosen more than once, it should only be printed once
+ #      is it in the list - dont add
+ #      is it not in the list - add 
+ #      dont print it 
+ #      reroll if there is a duplicate
+ #      make i minus the amount of times there is a duplicate
+        
+    
+        
+    
+
+    
     return ""
+
+randomConstellation()
