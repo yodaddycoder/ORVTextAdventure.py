@@ -1,21 +1,14 @@
 import time
 import random 
-import Constellations as cons
+import Constellations as cons, RandomPerson as rp
+from character import Character as char
 characterHealth = 100
 violentPersonAlive = True
 introSceneTrigger = False
 constellationChosen = False
 
-
-# All Classes
-class Enemy:
-    def __init__(self, name, health, attacks):
-        self.name = name
-        self.health = health
-        self.attacks = attacks
-    
-    def randomEnemyAttack(self):
-        return random.choice(self.attacks)
+# Randomizes random persons
+rp.randomPersonRandomizer()
 
 # Navigation around the map
 def introScene():
@@ -30,24 +23,8 @@ def introScene():
         print("Failure to do so will result in extermination.")
         time.sleep(1)
         print("")
-        print("Please choose your constellation.")
-        time.sleep(1)
-        print("")
-        print("Options:")
     else:
         print("You are back where you started.")
-    userInput = ""
-    cons.randomConstellation()
-    while userInput not in cons.constellationChoices:
-        userInput = input("") # ALEXIS: ADDED THIS TO ACTUALLY GET USER INPUT
-        if userInput == "none":
-            print("You have no constellation.")
-            break # ALEXIS: ADDED THIS TO BREAK OUT OF THE WHILE LOOP BC USER INPUT WOULD STILL BE NONE
-        elif userInput == "":
-            # choosable constellations
-            pass
-
-    # ALEXIS: YOU SHOULD USE A DO WHILE LOOP FOR THIS, LOOK IT UP
     while userInput not in choices:
         print("Options, left, right, forward, backward")
         userInput = input("") # ALEXIS: ADDED THIS TO ACTUALLY GET USER INPUT
@@ -110,13 +87,21 @@ def violentPerson1():
             else:
                 print("Please enter a valid option for the game.")
 
-        
-
 def emptySpace():
-    pass
+    print("You arrive at an empty space.")
+    choices = ["left"]
+    userInput = ""
+    while userInput not in choices:
+        print("Options: left")
+        userInput = input("")
+        if userInput == "left":
+            introScene()
+        else:
+            print("Please enter a valid option for the game.")
 
 def randomPerson():
-    pass
+    print("Hello there, I am " + rp.randomPersonList[0].name)
+    choices = ["backward, talk, fight"]
 
 def moneySpot1():
     pass
