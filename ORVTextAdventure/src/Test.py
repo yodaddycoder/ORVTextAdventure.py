@@ -1,6 +1,7 @@
 from character import Character as c, Item as item
 from helper import Text as text
 from story import Prologue as prologue
+import Constellations as cons
 
 ### Character creation test
 # player = c.MainCharacter("Boo")
@@ -66,3 +67,7 @@ from story import Prologue as prologue
 # print("Testing normal print")
 # text.typingPrint("Testing typing print one last time")
 prologue.prologue()
+for i in range (10):
+    print("Constellation choices")
+    cons.randomConstellation()
+    print()

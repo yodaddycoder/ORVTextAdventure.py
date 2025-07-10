@@ -1,5 +1,6 @@
 from character import Stats as stats, Inventory as inv
 from helper import Text as text
+import random
 
 class Character:
     def __init__(self, name, age):
@@ -66,3 +67,12 @@ class MainCharacter(Character):
         
     def displayCoins(self):
         print(f"[You have a total of {str(self.coins)} coins.]")
+
+class Enemy(Character):
+    def __init__(self, name, health, attacks):
+        self.name = name
+        self.health = health
+        self.attacks = attacks
+    
+    def randomEnemyAttack(self):
+        return random.choice(self.attacks)
