@@ -11,6 +11,10 @@ player.displayAttributesWindow()
 player.addAttributes(stats.Attribute("Cute", stats.Grade.rare), stats.Attribute("Big Brain", stats.Grade.legendary)) # test adding multiple attributes
 player.addAttributes() # test adding no attributes
 player.displayAttributesWindow()
+player.removeAttribute("Big Brain") # test removing attribute
+player.displayAttributesWindow()
+player.removeAttribute("Fake Attribute") # test removing fake attribute
+player.displayAttributesWindow()
 ### Coin and health tests
 # player.setCoins(10)
 # player.displayCoins()

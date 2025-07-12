@@ -43,3 +43,9 @@ class StatsGroup:
 
     def addStat(self, stat):
         self.stats.append(stat)
+
+    def removeStat(self, statName):
+        for stat in self.stats:
+            if (stat.name == statName):
+                self.stats.remove(stat)
+        print("ERROR: Attempted to remove a stat that does not exist")

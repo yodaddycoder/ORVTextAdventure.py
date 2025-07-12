@@ -20,6 +20,9 @@ class Character:
         for attribute in attributes:
             self.attributes.addStat(attribute)
 
+    def removeAttribute(self, attributeName):
+        self.attributes.removeStat(attributeName)
+
     def displayAttributesWindow(self):
         text.displayLine()
         print("[Personal Information]")
