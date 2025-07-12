@@ -1,11 +1,16 @@
-from character import Character as c, Item as item
+from character import Character as c, Item as item, Stats as stats
 from helper import Text as text
 from story import Prologue as prologue
 import Constellations as cons
 
 ### Character creation test
-# player = c.MainCharacter("Boo")
-# player.displayAttributesWindow()
+player = c.MainCharacter("Boo")
+player.displayAttributesWindow()
+player.addAttributes(stats.Attribute("Kitty", stats.Grade.common)) # test adding one attribute
+player.displayAttributesWindow()
+player.addAttributes(stats.Attribute("Cute", stats.Grade.rare), stats.Attribute("Big Brain", stats.Grade.legendary)) # test adding multiple attributes
+player.addAttributes() # test adding no attributes
+player.displayAttributesWindow()
 ### Coin and health tests
 # player.setCoins(10)
 # player.displayCoins()
@@ -66,8 +71,8 @@ import Constellations as cons
 # text.typingPrint("Testing typing print again")
 # print("Testing normal print")
 # text.typingPrint("Testing typing print one last time")
-prologue.prologue()
-for i in range (10):
-    print("Constellation choices")
-    cons.randomConstellation()
-    print()
+# prologue.prologue()
+# for i in range (10):
+#     print("Constellation choices")
+#     cons.randomConstellation()
+#     print()

@@ -1,3 +1,12 @@
+from enum import Enum
+
+class Grade(Enum):
+    common = "Common"
+    uncommon = "Uncommon"
+    rare = "Rare"
+    legendary = "Legendary"
+    mythical = "Mythical"
+
 class Stat:
     def __init__(self, name):
         self.name = name
@@ -6,6 +15,14 @@ class Stat:
         
     def __str__(self):
         return f"{self.name} Lv. {str(self.level)}"
+    
+class Attribute:
+    def __init__(self, name, grade):
+        self.name = name
+        self.grade = grade
+
+    def __str__(self):
+        return f"{self.name} ({self.grade.value})"
     
 class StatsGroup:
     def __init__(self, name, stats):
@@ -19,10 +36,8 @@ class StatsGroup:
         display = ""
         for i in range(len(self.stats)):
             display += str(self.stats[i])
-            if i == len(self.stats) - 1:
-                display += "."
-                break
-            display += ", "
+            if i != len(self.stats) - 1:
+                display += ", "
             
         return display
 

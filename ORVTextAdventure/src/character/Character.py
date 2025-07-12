@@ -13,6 +13,12 @@ class Character:
         self.health = 100
         self.coins = 0
         self.inventory = inv.Inventory()
+    
+    ### ATTRIBUTE METHODS
+
+    def addAttributes(self, *attributes):
+        for attribute in attributes:
+            self.attributes.addStat(attribute)
 
     def displayAttributesWindow(self):
         text.displayLine()
@@ -24,6 +30,8 @@ class Character:
         print(f"Exclusive Skills: {str(self.skills)}")
         print(f"Overall Stats: {str(self.overallStats)}")
         text.displayLine()
+
+    ### HEALTH METHODS
 
     def addHealth(self, hp):
         self.health += hp
@@ -39,6 +47,8 @@ class Character:
             return False
         return True
 
+    ### COIN METHODS
+
     def addCoins(self, coins):
         self.coins += coins
     
@@ -47,6 +57,8 @@ class Character:
     
     def setCoins(self, coins):
         self.coins = coins
+
+    ### INVENTORY METHODS
 
     def useEquipped(self):
         equipped = self.inventory.equipped
