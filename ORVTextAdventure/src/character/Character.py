@@ -1,4 +1,5 @@
-from character import Stats as stats, Inventory as inv
+from character.Stats import StatsGroup, Stat, Attribute, Grade as statGrade
+from character.Inventory import Inventory
 from helper import Text as text
 import random
 
@@ -7,12 +8,12 @@ class Character:
         self.name = name
         self.age = age
         self.sponsor = "None"
-        self.attributes = stats.StatsGroup("Attributes", [])
-        self.skills = stats.StatsGroup("Skills", [])
-        self.overallStats = stats.StatsGroup("Overall Stats", [stats.Stat("Stamina"), stats.Stat("Strength"), stats.Stat("Agility"), stats.Stat("Mana")])
+        self.attributes = StatsGroup("Attributes", [])
+        self.skills = StatsGroup("Skills", [])
+        self.overallStats = StatsGroup("Overall Stats", [Stat("Stamina"), Stat("Strength"), Stat("Agility"), Stat("Mana")])
         self.health = 100
         self.coins = 0
-        self.inventory = inv.Inventory()
+        self.inventory = Inventory()
     
     ### ATTRIBUTE METHODS
 

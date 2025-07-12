@@ -1,20 +1,22 @@
-from character import Character as c, Item as item, Stats as stats
+from character.Character import Character, MainCharacter, Enemy
+from character.Stats import Attribute, Grade as statGrade
+from character.Item import Item, Grade as itemGrade
 from helper import Text as text
 from story import Prologue as prologue
 import Constellations as cons
 
 ### Character creation test
-player = c.MainCharacter("Boo")
-player.displayAttributesWindow()
-player.addAttributes(stats.Attribute("Kitty", stats.Grade.common)) # test adding one attribute
-player.displayAttributesWindow()
-player.addAttributes(stats.Attribute("Cute", stats.Grade.rare), stats.Attribute("Big Brain", stats.Grade.legendary)) # test adding multiple attributes
-player.addAttributes() # test adding no attributes
-player.displayAttributesWindow()
-player.removeAttribute("Big Brain") # test removing attribute
-player.displayAttributesWindow()
-player.removeAttribute("Fake Attribute") # test removing fake attribute
-player.displayAttributesWindow()
+player = MainCharacter("Boo")
+# player.displayAttributesWindow()
+# player.addAttributes(Attribute("Kitty", statGrade.common)) # test adding one attribute
+# player.displayAttributesWindow()
+# player.addAttributes(Attribute("Cute", statGrade.rare), Attribute("Big Brain", statGrade.legendary)) # test adding multiple attributes
+# player.addAttributes() # test adding no attributes
+# player.displayAttributesWindow()
+# player.removeAttribute("Big Brain") # test removing attribute
+# player.displayAttributesWindow()
+# player.removeAttribute("Fake Attribute") # test removing fake attribute
+# player.displayAttributesWindow()
 ### Coin and health tests
 # player.setCoins(10)
 # player.displayCoins()
@@ -34,15 +36,15 @@ player.displayAttributesWindow()
 # player.displayHealth()
 ### Inventory tests
 # def basicAbility(): print(f"Used a basic ability!")
-# something = item.Item("something", False, item.Grade.A, basicAbility)
+# something = Item("something", False, itemGrade.A, basicAbility)
 # something.addDescription("This item was created for some reason idk.")
 # something.addAbilityDescription("Wow this item does something.")
 
-# somethingElse = item.Item("somethingElse", True, item.Grade.D, basicAbility)
+# somethingElse = Item("somethingElse", True, itemGrade.D, basicAbility)
 # somethingElse.addDescription("This item was created for some reason idk.")
 # somethingElse.addAbilityDescription("Wow this item does something. Oh btw it can only be used once.")
 
-# aThing = item.Item("aThing", True, item.Grade.Constellation, basicAbility)
+# aThing = Item("aThing", True, itemGrade.Constellation, basicAbility)
 
 # player.inventory.displayInventory()
 # player.inventory.addToInventory(something, 1)

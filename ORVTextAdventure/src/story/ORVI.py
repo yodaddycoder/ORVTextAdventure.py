@@ -1,7 +1,9 @@
 import time
 import random 
 import Constellations as cons
-from character import Character as char, RandomPerson as rp
+from character import RandomPerson as rp
+from character.Character import Character, MainCharacter, Enemy
+
 characterHealth = 100
 violentPersonAlive = True
 introSceneTrigger = False

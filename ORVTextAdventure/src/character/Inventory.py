@@ -1,4 +1,3 @@
-from character import Item as item
 from helper import Text as text
 
 class Inventory:
