@@ -1,9 +1,11 @@
 from character import Character as c, Item as item
+from helper import Text as text
+from story import Prologue as prologue
 import Constellations as cons
 
 ### Character creation test
-player = c.MainCharacter("Boo")
-player.displayAttributesWindow()
+# player = c.MainCharacter("Boo")
+# player.displayAttributesWindow()
 ### Coin and health tests
 # player.setCoins(10)
 # player.displayCoins()
@@ -59,6 +61,12 @@ player.displayAttributesWindow()
 ### Inventory access tests
 # player.inventory.accessInventory()
 
+### Prologue test
+# text.typingPrint("Testing typing print")
+# text.typingPrint("Testing typing print again")
+# print("Testing normal print")
+# text.typingPrint("Testing typing print one last time")
+prologue.prologue()
 for i in range (10):
     print("Constellation choices")
     cons.randomConstellation()

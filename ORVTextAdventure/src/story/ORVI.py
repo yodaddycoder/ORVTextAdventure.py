@@ -25,6 +25,7 @@ def introScene():
         print("")
     else:
         print("You are back where you started.")
+    userInput = ""
     while userInput not in choices:
         print("Options, left, right, forward, backward")
         userInput = input("") # ALEXIS: ADDED THIS TO ACTUALLY GET USER INPUT

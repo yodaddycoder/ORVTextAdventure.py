@@ -1,5 +1,5 @@
 from character import Stats as stats, Inventory as inv
-import Text as text
+from helper import Text as text
 import random
 
 class Character:
