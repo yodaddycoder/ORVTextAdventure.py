@@ -93,6 +93,14 @@ class Character:
     def upgradeOverallStat(self, name, levels):
         stat = self.overallStats.getStat(name)
         self.upgradeStat(stat, levels)
+
+    ### SKILL METHODS
+
+    def addSkill(self):
+        pass
+
+    def removeSkill(self):
+        pass
         
 class MainCharacter(Character):
     def __init__(self, name):
@@ -106,9 +114,9 @@ class MainCharacter(Character):
 
 class Enemy(Character):
     def __init__(self, name, health, attacks):
-        self.name = name
-        self.health = health
+        super().__init__(name, "■")
         self.attacks = attacks
+        self.setHealth(health)
     
     def randomEnemyAttack(self):
         return random.choice(self.attacks)
