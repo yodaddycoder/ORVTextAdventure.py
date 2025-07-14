@@ -12,9 +12,26 @@ constellationChosen = False
 # Randomizes random persons
 rp.randomPersonRandomizer()
 
+# Chooses an action from a list of options
+def chooseAction(choices):
+    userInput = ""
+    while userInput not in choices.keys():
+        print(f"Options: {(', ').join(choices.keys())}")
+        userInput = input("")
+        time.sleep(1)
+        if userInput in choices.keys():
+            choices[userInput]()
+        else:
+            print("Please enter a valid option for the game.")
+
 # Navigation around the map
 def introScene():
-    choices = ["left, right, forward, backward,"]
+    choices = {
+        "left": violentPerson1,
+        "right": emptySpace,
+        "forward": randomPerson,
+        "backward": moneySpot1
+    }
     global introSceneTrigger
     if introSceneTrigger == False:
         print("You are on a subway in the secondary car. A blue futuristic screen appears infront of you.")
@@ -25,23 +42,10 @@ def introScene():
         print("Failure to do so will result in extermination.")
         time.sleep(1)
         print("")
+        introSceneTrigger = True
     else:
         print("You are back where you started.")
-    userInput = ""
-    while userInput not in choices:
-        print("Options, left, right, forward, backward")
-        userInput = input("")
-        time.sleep(1)
-        if userInput == "left":
-            violentPerson1()
-        elif userInput == "right":
-            emptySpace()
-        elif userInput == "forward":
-            randomPerson()
-        elif userInput == "backward":
-            moneySpot1()
-        else:
-            print("Please enter a valid option for the game.")
+    chooseAction(choices)
     introSceneTrigger = True
 
 def violentPerson1():
@@ -84,15 +88,10 @@ def violentPerson1():
 
 def emptySpace():
     print("You arrive at an empty space.")
-    choices = ["left"]
-    userInput = ""
-    while userInput not in choices:
-        print("Options: left")
-        userInput = input("")
-        if userInput == "left":
-            introScene()
-        else:
-            print("Please enter a valid option for the game.")
+    choices = {
+        "left": introScene
+    }
+    chooseAction(choices)
 
 def randomPerson():
     print("Hello there, I am " + rp.randomPersonList[0].name)
@@ -109,5 +108,3 @@ def fightViolentPerson():
 
 def lootViolentPerson1():
     pass
-
-
