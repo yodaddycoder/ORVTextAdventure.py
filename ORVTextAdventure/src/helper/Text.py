@@ -1,7 +1,7 @@
 import sys, time, os
 
 def clearScreen():
-    os.system("clear")
+    os.system("cls" if os.name == "nt" else "clear")
 
 def typingPrint(text):
     for character in text:
