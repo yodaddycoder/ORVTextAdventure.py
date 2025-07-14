@@ -37,6 +37,9 @@ class Character:
         print(f"Overall Stats: {self.overallStats}")
         text.displayLine()
 
+    def setName(self, name):
+        self.name = name
+
     ### HEALTH METHODS
 
     def addHealth(self, hp):
@@ -134,6 +137,19 @@ class Character:
 class MainCharacter(Character):
     def __init__(self, name):
         super().__init__(name, "■")
+
+    def addName(self):
+        print("You open your attributes window.")
+        print("A blue screen appears again before you with your name at the very top.")
+        inputName = ""
+        while inputName == "":
+            inputName = input("That name is ")
+        self.name = inputName
+
+    def displayAttributesWindow(self):
+        if self.name == "":
+            self.addName()
+        return super().displayAttributesWindow()
     
     def displayHealth(self):
         print(f"[You have a total of {str(self.health)} health points.]")
@@ -162,3 +178,5 @@ class Enemy(Character):
     
     def randomEnemyAttack(self):
         return random.choice(self.attacks)
+
+mc = MainCharacter("")

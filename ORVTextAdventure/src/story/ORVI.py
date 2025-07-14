@@ -2,7 +2,8 @@ import time
 import random 
 import Constellations as cons
 from character import RandomPerson as rp
-from character.Character import Character, MainCharacter, Enemy
+from character.Character import Character, MainCharacter, Enemy, mc
+from story.Actions import *
 
 characterHealth = 100
 violentPersonAlive = True
@@ -12,25 +13,14 @@ constellationChosen = False
 # Randomizes random persons
 rp.randomPersonRandomizer()
 
-# Chooses an action from a list of options
-def chooseAction(choices):
-    userInput = ""
-    while userInput not in choices.keys():
-        print(f"Options: {(', ').join(choices.keys())}")
-        userInput = input("")
-        time.sleep(1)
-        if userInput in choices.keys():
-            choices[userInput]()
-        else:
-            print("Please enter a valid option for the game.")
-
 # Navigation around the map
 def introScene():
     choices = {
         "left": violentPerson1,
         "right": emptySpace,
         "forward": randomPerson,
-        "backward": moneySpot1
+        "backward": moneySpot1,
+        "view attributes window": mc.displayAttributesWindow
     }
     global introSceneTrigger
     if introSceneTrigger == False:
@@ -91,6 +81,7 @@ def emptySpace():
     choices = {
         "left": introScene
     }
+    setReturnFunction(emptySpace)
     chooseAction(choices)
 
 def randomPerson():
