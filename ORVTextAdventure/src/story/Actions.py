@@ -1,6 +1,14 @@
 import time
 from character.Character import Character, MainCharacter, mc
 
+class CharacterAction:
+    def __init__(self, callName, action):
+        self.callName = callName
+        self.action = action
+    
+    def action(self):
+        self.action()
+
 def blank():
     return
 
@@ -28,4 +36,8 @@ def otherChoices():
         "return": blank
     }
     chooseAction(choices)
+    returnFunction()
+
+def displayAttributesWindow():
+    mc.displayAttributesWindow()
     returnFunction()

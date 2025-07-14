@@ -20,8 +20,9 @@ def introScene():
         "right": emptySpace,
         "forward": randomPerson,
         "backward": moneySpot1,
-        "view attributes window": mc.displayAttributesWindow
+        "view attributes window": displayAttributesWindow
     }
+    setReturnFunction(introScene)
     global introSceneTrigger
     if introSceneTrigger == False:
         print("You are on a subway in the secondary car. A blue futuristic screen appears infront of you.")
