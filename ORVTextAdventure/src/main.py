@@ -1,10 +1,11 @@
 import os
 import time
+from helper import Text as text
 import story
 from story.Prologue import prologue, startGame
 from story.ORVI import introScene
 
-os.system("clear")
+text.clearScreen()
 time.sleep(1)
 prologue()
 start = startGame()

@@ -30,18 +30,15 @@ def introScene():
     userInput = ""
     while userInput not in choices:
         print("Options, left, right, forward, backward")
-        userInput = input("") # ALEXIS: ADDED THIS TO ACTUALLY GET USER INPUT
+        userInput = input("")
+        time.sleep(1)
         if userInput == "left":
-            time.sleep(1)
             violentPerson1()
         elif userInput == "right":
-            time.sleep(1)
             emptySpace()
         elif userInput == "forward":
-            time.sleep(1)
             randomPerson()
         elif userInput == "backward":
-            time.sleep(1)
             moneySpot1()
         else:
             print("Please enter a valid option for the game.")
@@ -56,14 +53,12 @@ def violentPerson1():
         while userInput1 not in violentPersonDeadChoices:
             print("Options: left, right, loot")
             userInput1 = input("")
+            time.sleep(1)
             if userInput1 == "left":
-                time.sleep(1)
                 randomPerson()
             elif userInput1 == "right":
-                time.sleep(1)
                 introScene()
             elif userInput1 == "loot":
-                time.sleep(1)
                 lootViolentPerson1()
             else:
                 print("Please enter a valid option for the game.")
@@ -73,17 +68,14 @@ def violentPerson1():
         while userInput not in choices:
             print("Options: left, right, talk, fight")
             userInput = input("")
+            time.sleep(1)
             if userInput == "left":
-                time.sleep(1)
                 print("The man infront of you grabs you. He raises his fists.")
             elif userInput == "right":
-                time.sleep(1)
                 print("The man infront of you grabs you. He raises his fists.")
             elif userInput == "talk":
-                time.sleep(1)
                 print("He doesn't listen to your words and readies his fists.")
             elif userInput == "fight":
-                time.sleep(1)
                 print("He readies his fists to fight you.")
                 time.sleep(1)
                 fightViolentPerson()
