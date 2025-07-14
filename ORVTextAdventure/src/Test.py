@@ -41,6 +41,12 @@ player = MainCharacter("Boo")
 # player.overallStats.getStat("Stamina").addExp(10)
 # player.displayCoins()
 # player.displayAttributesWindow()
+player.overallStats.getStat("Stamina").addLevelAdjustment(1)
+player.displayAttributesWindow()
+player.overallStats.getStat("Stamina").addLevelAdjustment(-1)
+player.displayAttributesWindow()
+player.overallStats.getStat("Stamina").addLevelAdjustment(-3)
+player.displayAttributesWindow()
 
 ### Coin and health tests
 # player.setCoins(10)

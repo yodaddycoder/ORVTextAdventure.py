@@ -12,11 +12,18 @@ class Stat:
         self.name = name
         self.exp = 0
         self.level = 1
-        self.adjustment = 0
+        self.levelAdjustment = 0
         
     def __str__(self):
-        return f"{self.name} Lv. {str(self.level)}"
+        if self.levelAdjustment == 0:
+            return f"{self.name} Lv. {str(self.level)}"
+        if (self.levelAdjustment) < 0:
+            return f"{self.name} Lv. {str(self.getActiveLevel())} (-{abs(self.levelAdjustment)})"
+        return f"{self.name} Lv. {str(self.getActiveLevel())} (+{self.levelAdjustment})"
+        
     
+    ### LEVEL METHODS
+
     def getNextLevelExpRequirement(self):
         return (self.level + 1) * 10 - 10
 
@@ -42,6 +49,19 @@ class Stat:
     def getUpgradeCost(self):
         expNeeded = self.getNextLevelExpRequirement() - self.exp
         return expNeeded * 10 * self.level
+    
+    # LEVEL ADJUSTMENTS
+
+    def addLevelAdjustment(self, adjustment):
+        self.levelAdjustment += adjustment
+    
+    def setLevelAdjustment(self, adjustment):
+        self.levelAdjustment = adjustment
+
+    def getActiveLevel(self):
+        if self.level + self.levelAdjustment < 0:
+            return 1
+        return self.level + self.levelAdjustment
 
 class Attribute:
     def __init__(self, name, grade):
