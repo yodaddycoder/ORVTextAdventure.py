@@ -2,6 +2,7 @@ from character.Character import Character, MainCharacter, Enemy
 from character.Stats import Attribute, Grade as statGrade
 from character.Item import Item, Grade as itemGrade
 from character.Skill import Skill
+from character.Stigma import Stigma
 from helper import Text as text
 from story import Prologue as prologue
 import Constellations as cons
@@ -9,23 +10,42 @@ import Constellations as cons
 ### Character creation test
 player = MainCharacter("Boo")
 
-### Skill tests
-def basicSkill():
-    print("A basic skill")
+### Stigma tests
+# player.displayAttributesWindow()
+# def basicStigma():
+#     print("A basic Stigma")
 
-basicSkill = Skill("Basic Skill", basicSkill)
-player.addSkill(basicSkill)
-player.displayAttributesWindow()
-player.setCoins(100000)
-player.upgradeSkill("Basic Skill", 1)
-player.skills.getStat("Basic Skill").addExp(100)
-player.displayAttributesWindow()
-player.activateSkill("Basic Skill")
-player.removeSkill("Basic Skill")
-player.removeSkill("Basic Skill")
-player.activateSkill("Basic Skill")
-player.activateSkill("Nonexistent Skill")
-player.displayAttributesWindow()
+# basicStigma = Stigma("Basic Stigma", basicStigma)
+# player.addStigma(basicStigma)
+# player.displayAttributesWindow()
+# player.setCoins(100000)
+# player.upgradeStigma("Basic Stigma", 1)
+# player.stigmas.getStat("Basic Stigma").addExp(100)
+# player.displayAttributesWindow()
+# player.activateStigma("Basic Stigma")
+# player.removeStigma("Basic Stigma")
+# player.removeStigma("Basic Stigma")
+# player.activateStigma("Basic Stigma")
+# player.activateStigma("Nonexistent Stigma")
+# player.displayAttributesWindow()
+
+### Skill tests
+# def basicSkill():
+#     print("A basic skill")
+
+# basicSkill = Skill("Basic Skill", basicSkill)
+# player.addSkill(basicSkill)
+# player.displayAttributesWindow()
+# player.setCoins(100000)
+# player.upgradeSkill("Basic Skill", 1)
+# player.skills.getStat("Basic Skill").addExp(100)
+# player.displayAttributesWindow()
+# player.activateSkill("Basic Skill")
+# player.removeSkill("Basic Skill")
+# player.removeSkill("Basic Skill")
+# player.activateSkill("Basic Skill")
+# player.activateSkill("Nonexistent Skill")
+# player.displayAttributesWindow()
 
 ### Attribute tests
 # player.displayAttributesWindow()
