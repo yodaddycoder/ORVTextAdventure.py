@@ -23,6 +23,7 @@ player = MainCharacter("Boo")
 ### Stat tests
 # print(player.overallStats.getStat("Stamina").name) # test getting stats
 # print(player.overallStats.getStat("Nonexistent stat").name) # test getting nonexistent stats
+
 # player.upgradeOverallStat("Nonexistent stat", 1)
 # player.upgradeOverallStat("Stamina", 1)
 # player.setCoins(1000000)
@@ -41,12 +42,18 @@ player = MainCharacter("Boo")
 # player.overallStats.getStat("Stamina").addExp(10)
 # player.displayCoins()
 # player.displayAttributesWindow()
-player.overallStats.getStat("Stamina").addLevelAdjustment(1)
-player.displayAttributesWindow()
-player.overallStats.getStat("Stamina").addLevelAdjustment(-1)
-player.displayAttributesWindow()
-player.overallStats.getStat("Stamina").addLevelAdjustment(-3)
-player.displayAttributesWindow()
+
+# player.overallStats.getStat("Stamina").addLevelAdjustment(1)
+# player.displayAttributesWindow()
+# player.overallStats.getStat("Stamina").addLevelAdjustment(-1)
+# player.displayAttributesWindow()
+# player.overallStats.getStat("Stamina").addLevelAdjustment(-3)
+# player.displayAttributesWindow()
+
+# player.overallStats.getStat("Stamina").setLevel(5)
+# print(f"Stamina EXP: {player.overallStats.getStat('Stamina').exp}")
+# player.overallStats.getStat("Stamina").addLevelAdjustment(-3)
+# player.displayAttributesWindow()
 
 ### Coin and health tests
 # player.setCoins(10)

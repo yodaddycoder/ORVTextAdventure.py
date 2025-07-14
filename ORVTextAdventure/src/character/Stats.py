@@ -24,8 +24,11 @@ class Stat:
     
     ### LEVEL METHODS
 
+    def getLevelExpRequirement(self, level):
+        return level * 10 - 10
+
     def getNextLevelExpRequirement(self):
-        return (self.level + 1) * 10 - 10
+        return self.getLevelExpRequirement(self.level + 1)
 
     def checkUpgradeLevel(self):
         while self.exp >= self.getNextLevelExpRequirement():
@@ -49,6 +52,10 @@ class Stat:
     def getUpgradeCost(self):
         expNeeded = self.getNextLevelExpRequirement() - self.exp
         return expNeeded * 10 * self.level
+
+    def setLevel(self, level):
+        self.exp = self.getLevelExpRequirement(level)
+        self.level = level
     
     # LEVEL ADJUSTMENTS
 
