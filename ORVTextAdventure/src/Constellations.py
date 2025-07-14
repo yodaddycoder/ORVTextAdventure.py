@@ -105,5 +105,3 @@ def randomConstellation():
 
     
     return ""
-
-randomConstellation()
