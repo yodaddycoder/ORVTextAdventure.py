@@ -102,6 +102,7 @@ class StatsGroup:
         for stat in self.stats:
             if (stat.name == statName):
                 self.stats.remove(stat)
+                return
         print("ERROR: Attempted to remove a stat that does not exist")
 
     def getStat(self, statName):

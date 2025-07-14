@@ -96,11 +96,19 @@ class Character:
 
     ### SKILL METHODS
 
-    def addSkill(self):
-        pass
+    def addSkill(self, skill):
+        self.skills.addStat(skill)
 
-    def removeSkill(self):
-        pass
+    def removeSkill(self, skillName):
+        self.skills.removeStat(skillName)
+    
+    def activateSkill(self, skillName):
+        skill = self.skills.getStat(skillName)
+        if (skill.name == "undefined"):
+            print("ERROR: Attempted to activate a skill that does not exist")
+            return
+        print(f"[The exclusive skill {skill} has been activated.]")
+        skill.activate()
         
 class MainCharacter(Character):
     def __init__(self, name):
