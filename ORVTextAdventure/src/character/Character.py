@@ -74,6 +74,26 @@ class Character:
             print(f"Used up {equipped.name}")
             self.inventory.deleteEquipped()
 
+    ### STAT METHODS
+
+    def upgradeStat(self, stat, levels):
+        if (stat.name == "undefined"):
+            print("ERROR: Attempted to upgrade nonexistent stat")
+            return
+        upgradeCost = stat.upgrade(levels, self.coins)
+        if (upgradeCost == 0):
+            return
+        self.coins -= upgradeCost
+
+
+    def upgradeSkill(self, name, levels):
+        stat = self.skills.getStat(name)
+        self.upgradeStat(stat, levels)
+
+    def upgradeOverallStat(self, name, levels):
+        stat = self.overallStats.getStat(name)
+        self.upgradeStat(stat, levels)
+        
 class MainCharacter(Character):
     def __init__(self, name):
         super().__init__(name, "■")

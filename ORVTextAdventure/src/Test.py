@@ -7,6 +7,8 @@ import Constellations as cons
 
 ### Character creation test
 player = MainCharacter("Boo")
+
+### Attribute tests
 # player.displayAttributesWindow()
 # player.addAttributes(Attribute("Kitty", statGrade.common)) # test adding one attribute
 # player.displayAttributesWindow()
@@ -17,6 +19,29 @@ player = MainCharacter("Boo")
 # player.displayAttributesWindow()
 # player.removeAttribute("Fake Attribute") # test removing fake attribute
 # player.displayAttributesWindow()
+
+### Stat tests
+# print(player.overallStats.getStat("Stamina").name) # test getting stats
+# print(player.overallStats.getStat("Nonexistent stat").name) # test getting nonexistent stats
+# player.upgradeOverallStat("Nonexistent stat", 1)
+# player.upgradeOverallStat("Stamina", 1)
+# player.setCoins(1000000)
+# player.upgradeOverallStat("Stamina", 1)
+# player.displayAttributesWindow()
+# player.displayCoins()
+# player.upgradeOverallStat("Stamina", 3)
+# player.displayAttributesWindow()
+# player.displayCoins()
+# print(f"Exp required for next Stamina level: {player.overallStats.getStat('Stamina').getNextLevelExpRequirement()}")
+# print(f"Coins required for next Stamina level: {player.overallStats.getStat('Stamina').getUpgradeCost()}")
+# player.overallStats.getStat("Stamina").addExp(3)
+# print(f"Coins required for next Stamina level: {player.overallStats.getStat('Stamina').getUpgradeCost()}")
+# player.upgradeOverallStat("Stamina", 1)
+# print(f"Coins required for next Stamina level: {player.overallStats.getStat('Stamina').getUpgradeCost()}")
+# player.overallStats.getStat("Stamina").addExp(10)
+# player.displayCoins()
+# player.displayAttributesWindow()
+
 ### Coin and health tests
 # player.setCoins(10)
 # player.displayCoins()
@@ -34,6 +59,7 @@ player = MainCharacter("Boo")
 # player.displayHealth()
 # player.subtractHealth(100)
 # player.displayHealth()
+
 ### Inventory tests
 # def basicAbility(): print(f"Used a basic ability!")
 # something = Item("something", False, itemGrade.A, basicAbility)
@@ -57,6 +83,7 @@ player = MainCharacter("Boo")
 # player.inventory.removeFromInventory(aThing, 1)
 # player.inventory.addToInventory(something, 1)
 # player.inventory.displayInventory()
+
 ### Equipped item tests
 # player.useEquipped()
 # player.inventory.accessInventory() # Equip somethingElse
@@ -66,9 +93,11 @@ player = MainCharacter("Boo")
 # player.inventory.showEquipped()
 # player.useEquipped()
 # player.inventory.displayInventory()
+
 ### Item info tests
 # something.displayDetails()
 # somethingElse.displayDetails()
+
 ### Inventory access tests
 # player.inventory.accessInventory()
 
