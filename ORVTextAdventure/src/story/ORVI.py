@@ -3,12 +3,15 @@ import random
 import Constellations as cons
 from character import RandomPerson as rp
 from character.Character import Character, MainCharacter, Enemy, mc
+from story.Scenario import MainScenario, Difficulty
 from story.Actions import *
 
 characterHealth = 100
 violentPersonAlive = True
 introSceneTrigger = False
 constellationChosen = False
+
+scenario = MainScenario("Prove Your Worth", 1, Difficulty.F, "Kill at least one living organism.", "5 minutes", "300 coins", "Extermination")
 
 # Randomizes random persons
 rp.randomPersonRandomizer()
@@ -27,12 +30,10 @@ def introScene():
     if introSceneTrigger == False:
         print("You are on a subway in the secondary car. A blue futuristic screen appears infront of you.")
         time.sleep(1)
-        print("")
-        print("[Scenario 1:]")
-        print("[Kill at least one living organism within 5 minutes.]")
-        print("Failure to do so will result in extermination.")
+        print()
+        scenario.displayScenario()
         time.sleep(1)
-        print("")
+        print()
         introSceneTrigger = True
     else:
         print("You are back where you started.")
