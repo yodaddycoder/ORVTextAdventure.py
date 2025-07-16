@@ -3,9 +3,13 @@ from character.Stats import Attribute, Grade as statGrade
 from character.Item import Item, Grade as itemGrade
 from character.Skill import Skill
 from character.Stigma import Stigma
+from character.RandomPerson import randomPersonList
 from helper import Text as text
 from story import Prologue as prologue
 import Constellations as cons
+
+
+
 
 ### Character creation test
 player = MainCharacter("Boo")

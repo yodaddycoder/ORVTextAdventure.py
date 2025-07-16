@@ -1,6 +1,7 @@
 import time
 import random 
 import Constellations as cons
+from character import Talk as talk
 from character import RandomPerson as rp
 from character.Character import Character, MainCharacter, Enemy, mc
 from story.Scenario import MainScenario, Difficulty
@@ -10,6 +11,12 @@ characterHealth = 100
 violentPersonAlive = True
 introSceneTrigger = False
 constellationChosen = False
+randomPersonOneAlive = True
+randomPersonTwoAlive = True
+randomPersonThreeAlive = True
+foundMoneySpot1 = False
+foundMoneySpot2 = False
+
 
 scenario = MainScenario("Prove Your Worth", 1, Difficulty.F, "Kill at least one living organism.", "5 minutes", "300 coins", "Extermination")
 
@@ -87,11 +94,49 @@ def emptySpace():
     chooseAction(choices)
 
 def randomPerson():
-    print("Hello there, I am " + rp.randomPersonList[0].name)
-    choices = ["backward, talk, fight"]
+    global randomPersonOneAlive
+    if randomPersonOneAlive == True:
+        print("Hello there, would you like to talk?")
+        choices = {
+            "backward": introScene,
+            "talk": talk.conversation,
+            "view attributes window": displayAttributesWindow
+        }
 
 def moneySpot1():
-    pass
+    global foundMoneySpot1
+    if foundMoneySpot1 == False:
+        print("You found money on the ground. Would you like to pick it up?")
+        choices = ["forward, pick up money, view attributes window"]
+        userInput = ""
+        while userInput not in choices:
+            print("Options: forward, pick up money, view attributes window")
+            userInput = input("")
+            if userInput == "forward":
+                introScene()
+            elif userInput == "pick up money":
+                Character.addCoins(0, 50)
+            elif userInput == "view attributes window":
+                Character.displayAttributesWindow()
+            else:
+                print("Please enter a valid option for the game.")
+        foundMoneySpot1 = True
+    else:
+        print("You are at an empty spot.")
+        foundMoneyChoices = ["forward, view attributes window"]
+        userInput = ""
+        while userInput not in choices:
+            print("Options: forward, view attributes window")
+            userInput = input("")
+            if userInput == "forward":
+                introScene()
+            elif userInput == "view attributes window":
+                Character.displayAttributesWindow()
+            else:
+                print("Please enter a valid option for the game.")
+        
+        
+
 
 
 

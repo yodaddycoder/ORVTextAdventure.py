@@ -1,24 +1,33 @@
 import random as rand
+
 from character.Character import Character
 from character.Inventory import Inventory
 
-firstNames = []
-lastNames = []
+path = "ORVTextAdventure/src/character/names/"
 
+firstNamesFile = open(path + "firstNames.txt", "rt")
+lastNamesFile = open(path + "lastNames.txt", "rt")
 
-#LiamRyder = Character("Liam Ryder", 26)
+firstNames = firstNamesFile.read().split(",")
+lastNames = lastNamesFile.read().split(",")
 
-#OliviaBaker = Character("Olivia Baker", 37)
+randomPersonList = []
 
-#SamDavis = Character("Sam Davis", 15)
+def createRandomPerson():
+    global firstNames
+    global lastNames
+    randomFirstName = rand.choice(firstNames)
+    randomLastName = rand.choice(lastNames)
+    randomAge = rand.randint(13, 80)
+    randomPerson = Character(f"{randomFirstName} {randomLastName}", randomAge)    
+    return randomPerson
 
-randomPersonList = [LiamRyder, OliviaBaker, SamDavis]
+for i in range(0, 2):
+    randomPersonList.append(createRandomPerson())
 
 def randomPersonRandomizer():
     global randomPersonList
     rand.shuffle(randomPersonList)
-
-def createRandomPerson():
-    pass
+    
     
 # ideas: could randomize name combination and age
