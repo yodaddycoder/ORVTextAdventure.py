@@ -115,9 +115,10 @@ def moneySpot1():
             if userInput == "forward":
                 introScene()
             elif userInput == "pick up money":
-                Character.addCoins(0, 50)
+                mc.addCoins(50)
             elif userInput == "view attributes window":
-                Character.displayAttributesWindow()
+                setReturnFunction(moneySpot1)
+                displayAttributesWindow()
             else:
                 print("Please enter a valid option for the game.")
         foundMoneySpot1 = True
